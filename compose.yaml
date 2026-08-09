@@ -1,0 +1,27 @@
+name: my-vue3
+
+services:
+  web: #service ย่อย ตั้งชื่อตามโปรเจค เช่น backend frontend
+    build: .
+    image: my-vue3-image #ตั้งชื่อ image ไม่ใส่ก็ได้
+    container_name: my-vue3-con #ตั้งชื่อ container ไม่ใส่ก็ได้
+    ports:
+      - "5173:5173"
+    volumes: 
+      - .:/app
+      - /app/node_modules
+
+#   db:
+#     image: mongo #pull image จาก public
+#     ports:
+#       - "27020:27017"
+#     # volumes: #แบบ bind mounts (เชื่อมกับ ไฟล์ในเครื่อง host)
+#     #   - ./data:/data/db
+#     volumes: #แบบ volumes-name
+#       - mongo-vue-db:/data/db
+#       - mongo-vue-configdb:/data/configdb
+# volumes: #แบบ volumes-name
+#   mongo-vue-db:
+#     name: mongo-vue-db
+#   mongo-vue-configdb:
+#     name: mongo-vue-configdb

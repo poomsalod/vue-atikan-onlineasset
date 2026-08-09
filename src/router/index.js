@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AddView from '../views/AddView.vue'
 import DetailView from '../views/DetailView.vue'
+import FormNode from '../views/test_cs_form_creat_node/form_node.vue'
+import OrgChartSale from '@/views/cs/orgsale/OrgChartSale.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +22,16 @@ const router = createRouter({
       path: '/detail/:id',
       name: 'detail',
       component: DetailView
+    },
+    {
+      path: '/cs/node/create',
+      name: 'detail',
+      component: FormNode
+    },
+    {
+      path: '/cs/orgsale/chart',
+      name: 'orgsale',
+      component: OrgChartSale
     },
   ]
 })
